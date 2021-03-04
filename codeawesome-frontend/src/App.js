@@ -7,9 +7,10 @@ import Projects from './components/Projects'
 import About from './components/About';
 import Contact from './components/Contact';
 import Tutorials from './components/Tutorials'
+
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: "white", position: "absolute", height: "100%", width: "100%", border: "none"}}>
       <Router>
         <NavBar />
         <Route exact path="/">
@@ -27,8 +28,10 @@ function App() {
         <Route exact path="/tutorials">
           <Tutorials />
         </Route>
+ 
       </Router>
     </div>
+
   );
 }
 

@@ -1,0 +1,14 @@
+{
+  "name": "codeawesome",
+  "version": "1.0.0",
+  "description": "Backend Control Of CodeAwesome site",
+  "main": "server.js",
+  "repository": "https://github.com/DakshDesaiCoder/CodeAwesome.git",
+  "author": "Daksh Desai <dakshdesai54@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.18"
+  }
+}

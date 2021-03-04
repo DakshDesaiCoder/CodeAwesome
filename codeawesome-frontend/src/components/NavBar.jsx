@@ -8,7 +8,7 @@ function NavBar() {
         <div className="container-fluid nav bg">
                 <div className="col-10 mx-auto">
                     <Navbar bg="white" expand="lg">
-                        <Navbar.Brand as={Link} to="/" style={{color:"#00FFFF",fontWeight:"bolder",fontSize:"1.9rem"}}>CodeAwesome</Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/" style={{color:"turquoise",fontWeight:"bolder",fontSize:"1.9rem"}}>CodeAwesome</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav id="nav" className="ml-auto mb-2 mb-lg-0">
