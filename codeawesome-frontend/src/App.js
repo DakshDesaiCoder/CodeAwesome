@@ -7,7 +7,7 @@ import Projects from './components/Projects'
 import About from './components/About';
 import Contact from './components/Contact';
 import Tutorials from './components/Tutorials'
-
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App" style={{backgroundColor: "white", position: "absolute", height: "100%", width: "100%", border: "none"}}>

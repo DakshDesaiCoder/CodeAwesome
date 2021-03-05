@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Row,Container} from 'reactstrap';
 import {Form,Button} from 'react-bootstrap'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
 const Contact=() => {
     const [data,setData]=useState({
         email:"",
@@ -17,12 +18,21 @@ const Contact=() => {
             }
         })
     }
-    function formSubmit(){
-        
-        axios.post("http://localhost:8080/create",data)
-        
+    function formSubmit(event){
+        event.preventDefault()
+        toast.dark('Message Has Been Sent!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+        axios.post("http://localhost:8080/create",data)        
     }
     return (
+        <>
         <div className="my-5">
             <h1 className="text-center" style={{fontWeight:"bolder",color:"black"}}>Contact Us</h1>
             <Container>
@@ -53,6 +63,8 @@ const Contact=() => {
                 </Row>    
             </Container> 
         </div>
+        <ToastContainer />
+        </>
     )
 }
 
