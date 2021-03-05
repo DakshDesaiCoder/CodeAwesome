@@ -20,7 +20,7 @@ const Contact=() => {
     function formSubmit(){
         
         axios.post("http://localhost:8080/create",data)
-        alert("Message Sent")
+        
     }
     return (
         <div className="my-5">
