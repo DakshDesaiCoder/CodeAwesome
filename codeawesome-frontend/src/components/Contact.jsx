@@ -28,7 +28,7 @@ const Contact=() => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            });
+        });
         axios.post("http://localhost:8080/create",data)        
     }
     return (
