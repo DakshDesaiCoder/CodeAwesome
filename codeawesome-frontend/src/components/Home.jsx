@@ -9,14 +9,14 @@ function Home() {
             <div className="container-fluid">
                 <div className="row">
                     < div className="col-10 mx-auto">
-                        <div style={{ float: "left", paddingTop: "2%" }}>
+                        <div style={{ float: "left", paddingRight:"5%",paddingTop: "2%" }}>
                             <img src={web} className="img-fluid animated" alt="home img" width="600" height="600" />
                         </div>
-                        <div style={{ paddingLeft:"10%",paddingTop: "4%" }} >
+                        <div style={{ paddingLeft:"20%",paddingTop: "4%" }} >
                             <h1>Grow Your Skills With <span style={{ color: "#008b8b",height:"10vh"}}><strong>CodeAwesome</strong></span></h1>
                             <h5 className="my-3">We are team of talented coders to help you to improve your coding skills</h5>
                         </div>
-                        <div style={{paddingLeft:"10%"}} className="mt-3">
+                        <div style={{paddingLeft:"20%"}} className="mt-3">
                             <Button variant="outline-info" as={Link} to="/tutorials" style={{ borderRadius: "20px" }}>Get Started</Button>
                         </div>
                     </div>

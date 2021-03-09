@@ -41,16 +41,10 @@ function Router() {
           <Route exact path="/admin">
           <Admin />
         </Route >
-        <Route exact path="/dashboard">
-          <Admin />
-        </Route >
         </>)}
         {
           loggedIn === true &&(
             <>
-              <Route exact path="/dashboard">
-                <DashBoard />
-              </Route >
               <Route exact path="/admin">
                 <DashBoard />
               </Route >

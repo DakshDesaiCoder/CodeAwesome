@@ -5,6 +5,9 @@ import './About.css'
 function About() {
     return (
         <>
+        <div className="container-fluid col-10 mx-auto" style={{float:"top", borderRadius:"0px 25px 0px 25x"}}>
+        <h1 style={{textAlign:"center", color: 'cyan'}}>Members Of CodeAwesome</h1>
+        </div>
         <div id="Card" className="container-fluid col-10 mx-auto">
             <Row gy="3" style={{paddingTop:"5%",justifyContent:"space-evenly"}}>
             <Card style={{ width:"18rem",borderRadius:"0px 25px 0px 25px"}} className="cards">

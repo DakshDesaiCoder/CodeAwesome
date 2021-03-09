@@ -7,7 +7,7 @@ function AuthContextProvider(props){
     function getLoggedIn(){
         axios.get("http://localhost:8080/loggedIn").then((response)=>{
             const dataToRecive = response.data
-            console.log(dataToRecive)
+            
             setLoggedIn(dataToRecive)
             
         })

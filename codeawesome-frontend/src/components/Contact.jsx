@@ -20,6 +20,8 @@ const Contact=() => {
     }
     function formSubmit(event){
         event.preventDefault()
+
+        axios.post("http://localhost:8080/create",data)
         toast.dark('Message Has Been Sent!', {
             position: "top-right",
             autoClose: 5000,
@@ -28,8 +30,7 @@ const Contact=() => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-        });
-        axios.post("http://localhost:8080/create",data)        
+        });       
     }
     return (
         <>

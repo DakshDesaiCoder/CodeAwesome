@@ -1,9 +1,11 @@
 const express = require("express")
 const bcrypt = require("bcrypt")
+require('dotenv').config()
 const router=express.Router()
 const jwt = require("jsonwebtoken")
 const Login = require("../models/AdminLoginModel")
 const Message=require("../models/messageModel.js")
+const Tutorials = require("../models/tutsModel")
 const { json } = require("express")
 const cookieParser = require("cookie-parser")
 router.route("/create").post((req,res)=>{
@@ -17,7 +19,25 @@ router.route("/create").post((req,res)=>{
     }) 
     newMessage.save()
 })
-
+router.post("/tutorials",async(req,res)=>{
+    try{
+        const tutsimage=req.body.tutsimage
+        const tutsname=req.body.tutsname
+        const tutscontent=req.body.tutscontent
+        const tutsbuttonlinkyt=req.body.tutsbuttonlinkyt
+        const tutsbuttonlinkgithub=req.body.tutsbuttonlinkgithub
+        const newTutorial=new Tutorials({
+            tutsimage,
+            tutsname,
+            tutscontent,
+            tutsbuttonlinkyt,
+            tutsbuttonlinkgithub
+        })
+        newTutorial.save()
+    }catch(err){
+        res.sendStatus(500)
+    }
+})
 router.post("/login",async(req,res)=>{
     try{
         const email=req.body.email
@@ -32,7 +52,7 @@ router.post("/login",async(req,res)=>{
             console.log("Password Matched");
             const token =await  jwt.sign({
                 user: adminmail._id
-            },"$2b$12$E.etQ.gpz.lRuJcUhKarjOSuGzkgu8HEkvAv3tEaTdOium6D4rnM2")
+            },process.env.JWT_SECRET)
             console.log(`Cookie Token: ${token}`)
             res
             .cookie("Token",token,{
@@ -55,13 +75,21 @@ router.get("/logout",(req,res)=>{
         })
         .send()
 })
+router.get("/readTuts",async(req,res)=>{
+    try{
+        Tutorials.find()
+                 .then(foundTuts => res.json(foundTuts)) 
+    }catch(err){
+        res.sendStatus(500)
+    }
+})
 router.get("/loggedIn",async(req,res)=>{
     try{
         const {cookies} = req
         const cookiecheck= cookies.Token
         console.log(`Cookie Recived :${cookiecheck}`)
         if(!cookiecheck) return res.json(false)
-        jwt.verify(cookiecheck,"$2b$12$E.etQ.gpz.lRuJcUhKarjOSuGzkgu8HEkvAv3tEaTdOium6D4rnM2")
+        jwt.verify(cookiecheck,process.env.JWT_SECRET)
         res.send(true)
         console.log("logged in")
     }catch(err){
