@@ -25,7 +25,7 @@ function Tutorials() {
             <div id="Card" className="container-fluid col-10 mx-auto">
                  <Row gy="3" style={{paddingTop:"5%",justifyContent:"space-around"}}>
                     {tuts.map(tut=>
-                    <div><Card style={{ width: '18rem' }}>
+                    <div><Card style={{ width: '18rem' }} className="cards">
                     <Card.Img variant="top" src={tut.tutsimage} />
                         <Card.Body>
                             <Card.Title>{tut.tutsname}</Card.Title>

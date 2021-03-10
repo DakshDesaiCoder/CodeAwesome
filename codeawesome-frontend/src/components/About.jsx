@@ -15,7 +15,7 @@ function About() {
         <Card.Title>Daksh Desai</Card.Title>
        
         <Card.Text>
-            Hi I am Daksh Desai Coder Papa MERN. I will help you learn MERN stack very easily. MERN is one of the fastest growing tech stacks used in the industry of web development. So, let's gooo!!!!!!
+            Hi I am Daksh Desai a student and expert in MERN Stack. I will help you learn MERN stack very easily. MERN is one of the fastest growing tech stacks used in the industry of web development. So, let's gooo!!!!!!
         </Card.Text>
         <Card.Link href="https://github.com/DakshDesaiCoder" target="_blank">Github</Card.Link>
     </Card.Body>

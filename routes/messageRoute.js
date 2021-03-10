@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken")
 const Login = require("../models/AdminLoginModel")
 const Message=require("../models/messageModel.js")
 const Tutorials = require("../models/tutsModel")
+const Projects = require("../models/projectsModel")
 const { json } = require("express")
 const cookieParser = require("cookie-parser")
 router.route("/create").post((req,res)=>{
@@ -34,6 +35,25 @@ router.post("/tutorials",async(req,res)=>{
             tutsbuttonlinkgithub
         })
         newTutorial.save()
+    }catch(err){
+        res.sendStatus(500)
+    }
+})
+router.post("/projects",async(req,res)=>{
+    try{
+        const projectsimage=req.body.projectimage
+        const projectsname=req.body. projectname
+        const projectscontent=req.body. projectcontent
+        const projectsbuttonlinkyt=req.body.projectbuttonlinkyt
+        const projectsbuttonlinkgithub=req.body.projectbuttonlinkgithub
+        const newProjects=new Projects({
+            projectsimage,
+            projectsname,
+            projectscontent,
+            projectsbuttonlinkyt,
+            projectsbuttonlinkgithub
+        })
+        newProjects.save()
     }catch(err){
         res.sendStatus(500)
     }
@@ -79,6 +99,14 @@ router.get("/readTuts",async(req,res)=>{
     try{
         Tutorials.find()
                  .then(foundTuts => res.json(foundTuts)) 
+    }catch(err){
+        res.sendStatus(500)
+    }
+})
+router.get("/readProjects",async(req,res)=>{
+    try{
+        Projects.find()
+                 .then(foundProjects => res.json(foundProjects)) 
     }catch(err){
         res.sendStatus(500)
     }
